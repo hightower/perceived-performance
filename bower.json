@@ -1,0 +1,25 @@
+{
+  "name": "perceived-performance",
+  "version": "0.0.0",
+  "authors": [
+    "nathan@gethightower.com"
+  ],
+  "description": "Angular module to assist in measuring the perceived load time on a single page app",
+  "main": "perceived_performance.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "angular",
+    "performance",
+    "metrics"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
