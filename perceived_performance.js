@@ -30,7 +30,7 @@
                         var finishTime = (new Date).getTime() - performanceTimer.startTime;
                         var initial = undefined
                         if (window.performance && initialLoad) {
-                            initial = window.performance.timing.domComplete - window.performance.timing.fetchStart;
+                            initial = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.fetchStart;
                         }
                         $http.post($scope.performanceUrl, {content: finishTime, initial: initial, name: $scope.performance || $state.current.name});
                     }
