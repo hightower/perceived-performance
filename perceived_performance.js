@@ -33,8 +33,8 @@
                             initial = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.fetchStart;
                         }
                         $http.post($scope.performanceUrl, {content: finishTime, initial: initial, name: $scope.performance || $state.current.name});
+                        initialLoad = false;
                     }
-                    initialLoad = false;
                 };
 
                 this.register = function (scopeId) {
