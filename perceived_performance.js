@@ -22,7 +22,7 @@
                 var divs = [];
                 var initialLoad = true;
 
-                this.done = function (scopeId) {
+                this.done = function (scopeId, name) {
                     var index = divs.indexOf(scopeId);
                     if (index >= 0) divs.splice(index, 1);
 
@@ -32,7 +32,7 @@
                         if (window.performance && initialLoad) {
                             initial = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.fetchStart;
                         }
-                        $http.post($scope.performanceUrl, {content: finishTime, initial: initial, name: $scope.performance || $state.current.name});
+                        $http.post($scope.performanceUrl, {content: finishTime, initial: initial, name: $scope.performance || name || $state.current.name});
                         initialLoad = false;
                     }
                 };
@@ -55,7 +55,7 @@
                 var unwatchLoaded = scope.$watch(attrs.performanceLoaded, function (newValue, oldValue) {
                     if (newValue) {
                         scope.$evalAsync(function () {
-                            ctrl.done(scope.$id);
+                            ctrl.done(scope.$id, attrs.performanceName);
                         });
                         unwatchLoaded();
                     }
