@@ -1,8 +1,8 @@
 {
   "name": "perceived-performance",
-  "version": "1.0.0",
+  "version": "0.0.5",
   "description": "An angular module for assisting with determining perceived page load times.",
-  "main": "perceived_performance.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
